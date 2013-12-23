@@ -1,5 +1,5 @@
 # General settings
-default['sonar']['dir']                    = "/opt/sonar"
+default['sonar']['dir']                    = "/opt/sonarqube"
 default['sonar']['version']                = "4.0"
 default['sonar']['checksum']               = "f5573c0355509b0ba378279501f561b1"
 default['sonar']['os_kernel']              = "linux-x86-64"

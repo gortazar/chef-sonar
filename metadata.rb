@@ -4,10 +4,10 @@ license          "Apache 2.0"
 description      "Installs/Configures sonar"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          "0.0.4"
-recipe           "sonar", "Includes the recipe to download and configure a sonar server"
-recipe           "sonar::database_mysql", "Includes the recipe to install MySql-Server and create a database for sonar"
-recipe           "sonar::proxy_apache", "Includes the recipe to install Apache-Webserver and proxy modules to access sonar. Creates a host for sonar."
-recipe           "sonar::proxy_nginx", "Includes the recipe to install Nginx-Webserver and configures proxy to access sonar. Creates a host for sonar."
+recipe           "sonarqube", "Includes the recipe to download and configure a sonarqube server"
+recipe           "sonarqube::database_mysql", "Includes the recipe to install MySql-Server and create a database for sonar"
+recipe           "sonarqube::proxy_apache", "Includes the recipe to install Apache-Webserver and proxy modules to access sonar. Creates a host for sonar."
+recipe           "sonarqube::proxy_nginx", "Includes the recipe to install Nginx-Webserver and configures proxy to access sonar. Creates a host for sonar."
 
 %w{ debian ubuntu }.each do |os|
   supports os
@@ -20,11 +20,11 @@ end
 attribute "sonar/dir",
   :display_name => "Sonar directory",
   :description => "Path to sonar",
-  :default => "/opt/sonar"
+  :default => "/opt/sonarqube"
 
 attribute "sonar/version",
   :display_name => "Sonar version",
-  :description => "The version will be used to download the sources for the given version from 'http://dist.sonar.codehaus.org/sonar-#version#.zip'",
+  :description => "The version will be used to download the sources for the given version from 'http://dist.sonar.codehaus.org/sonarqube-#version#.zip'",
   :default => "4.0"
 
 attribute "sonar/checksum",
