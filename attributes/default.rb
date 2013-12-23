@@ -1,8 +1,8 @@
 # General settings
 default['sonar']['dir']                    = "/opt/sonar"
-default['sonar']['version']                = "2.11"
-default['sonar']['checksum']               = "9d05e25ca79c33d673004444d89c8770"
-default['sonar']['os_kernel']              = "linux-x86-32"
+default['sonar']['version']                = "4.0"
+default['sonar']['checksum']               = "f5573c0355509b0ba378279501f561b1"
+default['sonar']['os_kernel']              = "linux-x86-64"
 default['sonar']['mirror']                 = "http://dist.sonar.codehaus.org"
 
 # Web settings
@@ -19,8 +19,8 @@ default['sonar']['web_template']           = "default"
 # @see conf/sonar.properties for examples for different databases
 default['sonar']['jdbc_username']          = "sonar"
 default['sonar']['jdbc_password']          = "sonar"
-default['sonar']['jdbc_url']               = "jdbc:derby://localhost:1527/sonar;create=true"
-default['sonar']['jdbc_driverClassName']   = "org.apache.derby.jdbc.ClientDriver"
+default['sonar']['jdbc_url']               = "jdbc:h2:tcp://localhost:9092/sonar"
+default['sonar']['jdbc_driverClassName']   = "org.h2.Driver"
 default['sonar']['jdbc_validationQuery']   = "values(1)"
 
 # Wrapper settings eg. for performance improvements
