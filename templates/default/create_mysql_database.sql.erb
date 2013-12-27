@@ -5,8 +5,8 @@
 
 CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-CREATE USER 'sonar' IDENTIFIED BY 'sonar';
-GRANT ALL ON sonar.* TO 'sonar'@'%' IDENTIFIED BY 'sonar';
-GRANT ALL ON sonar.* TO 'sonar'@'localhost' IDENTIFIED BY 'sonar';
+CREATE USER '<%= node["sonar"]["jdbc_username"] %>' IDENTIFIED BY '<%= node["sonar"]["jdbc_password"] %>';
+GRANT ALL ON sonar.* TO '<%= node["sonar"]["jdbc_username"] %>'@'%' IDENTIFIED BY '<%= node["sonar"]["jdbc_password"] %>';
+GRANT ALL ON sonar.* TO '<%= node["sonar"]["jdbc_username"] %>'@'localhost' IDENTIFIED BY '<%= node["sonar"]["jdbc_password"] %>';
 FLUSH PRIVILEGES;
 
