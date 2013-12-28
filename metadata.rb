@@ -1,7 +1,7 @@
-maintainer       "Christian Trabold"
-maintainer_email "info@christian-trabold.de"
+maintainer       "Patxi Gortázar"
+maintainer_email "patxi.gortazar@gmail.com"
 license          "Apache 2.0"
-description      "Installs/Configures sonar"
+description      "Installs/Configures sonarqube"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          "0.0.5"
 recipe           "sonarqube", "Includes the recipe to download and configure a sonarqube server"

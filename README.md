@@ -1,6 +1,6 @@
 # DESCRIPTION:
 
-This cookbook basically translates the install instructions from http://docs.codehaus.org/display/SONAR/Install+Sonar#InstallSonar-Server into chef DSL.
+This cookbook basically translates the install instructions from http://docs.codehaus.org/display/SONAR/Install+Sonar#InstallSonar-Server into chef DSL. It is an updated version from the original ctrabold/chef-sonar cookbook to support sonarqube (>= 4.0). 
 
 # REQUIREMENTS:
 
@@ -14,7 +14,8 @@ See `attributes/default.rb` for details.
 
 # USAGE:
 
-The cookbook installs sonar with derby database (default).
+The cookbook installs sonar with h2 database (default).
+The sonarqube::mysql recipe creates a mysql db to use with sonarqube
 Inlcude a `proxy_*` recipe to your `run_list` to access sonar over a proxy server.
 
 # Todos
