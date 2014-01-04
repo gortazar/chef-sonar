@@ -36,8 +36,8 @@ attribute "sonar/os_kernel",
   :description => "Choose which CPU your running sonar on. This modifies the start-script to your architecture.",
   :default => "linux-x86-64"
 
-attribute "sonar/runner/version"
-  :display_name => "Sonar-runner version",
+attribute "sonar/runner/version",
+  :display_name => "Sonar runner version",
   :description => "The version that will be used to download the sources for the given version from 'http://repo1.maven.org/maven2/org/codehaus/sonar/runner/sonar-runner-dist/#version#/sonar-runner-dist-#version#.zip'"
   :default => "2.3"
 
