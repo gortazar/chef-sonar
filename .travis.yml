@@ -1,0 +1,8 @@
+language: java
+before_script:
+  - sudo apt-get update 
+  - ./prepare_solo_rb.sh
+  - mysql -e 'create database sonar;'
+  - sudo ./bootstrap-chef-solo.sh
+script: ./test/run-tests.sh
+

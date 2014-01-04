@@ -64,3 +64,19 @@ template "wrapper.conf" do
   mode 0644
   notifies :restart, resources(:service => "sonar")
 end
+
+remote_file "/opt/sonar-runner-#{node['sonar']['runner']['version']}.zip" do
+  source "http://repo1.maven.org/maven2/org/codehaus/sonar/runner/sonar-runner-dist/#{node['sonar']['runner']['version']}/sonar-runner-dist-#{node['sonar']['runner']['version']}.zip"
+  mode "0644"
+  checksum "#{node['sonar']['checksum']}"
+  not_if { ::File.exists?("/opt/sonar-runner-#{node['sonar']['runner']['version']}.zip") }
+end
+
+execute "unzip /opt/sonar-runner-#{node['sonar']['runner']['version']}.zip -d /opt/" do
+  not_if { ::File.directory?("/opt/sonar-runner-#{node['sonar']['runner']['version']}/") }
+end
+
+link "/opt/sonar-runner" do
+  to "/opt/sonar-runner-#{node['sonar']['runner']['version']}"
+end
+
