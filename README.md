@@ -1,5 +1,7 @@
 # DESCRIPTION:
 
+[![Build Status](https://travis-ci.org/gortazar/chef-sonar.png)](https://travis-ci.org/gortazar/chef-sonar)
+
 This cookbook basically translates the install instructions from http://docs.codehaus.org/display/SONAR/Install+Sonar#InstallSonar-Server into chef DSL. It is an updated version from the original ctrabold/chef-sonar cookbook to support sonarqube (>= 4.0). 
 
 # REQUIREMENTS:
