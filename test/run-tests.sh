@@ -12,7 +12,7 @@ if [ 0 -ne $? ]; then
 fi
 
 # Test sonar project connection
-HTTPSTATUS=`curl -sL -w "%{http_code}" "http://localhost:9000/dashboard/index/java-sonar-runner-simple" -o /dev/null`
+HTTPSTATUS=`curl -s -w "%{http_code}" "http://localhost:9000/dashboard/index/java-sonar-runner-simple" -o /dev/null`
 if [ 200 -ne $HTTPSTATUS ]; then
   echo "Unexpected HTTP status code: $HTTPSTATUS"
   exit 1
