@@ -5,4 +5,5 @@ before_script:
   - mysql -e 'create database sonar;'
   - sudo ./bootstrap-chef-solo.sh
 script: ./test/run-tests.sh
-
+after_failure:
+  - cat ./chef-stacktrace.out
